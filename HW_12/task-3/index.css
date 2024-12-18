@@ -1,0 +1,15 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  word-wrap: break-word;
+}
+
+li {
+  padding: 5px;
+}
+
+.delete {
+  display: flex;
+  margin-top: 5px;
+}
