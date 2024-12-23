@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  #slider-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    #imageANDnavigation {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      button {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+      }
+      #image {
+        width: 70%;
+        height: 70vh;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+    #dots {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 20%;
+      margin: auto;
+      margin-top: 30px;
+      .dot {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: green;
+      }
+      .dot.active {
+        background-color: lightgreen;
+      }
+    }
+  }
+}
