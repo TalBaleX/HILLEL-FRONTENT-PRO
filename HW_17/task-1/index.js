@@ -9,6 +9,9 @@ class Calculator {
     return a * b;
   }
   divide(a, b) {
+    if (b === 0) {
+      return `У прикладі ${a} / ${b} є помилка, на нуль ділити ніколи не можна!`;
+    }
     return a / b;
   }
 }
