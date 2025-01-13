@@ -9,7 +9,8 @@ class BankAccount {
     this.balance = this.balance + dollars;
   }
   withdraw(dollars) {
-    this.balance = this.balance - dollars;
+    let newBalance = this.balance - dollars;
+    if (newBalance >= 0) this.balance = newBalance;
   }
 }
 
