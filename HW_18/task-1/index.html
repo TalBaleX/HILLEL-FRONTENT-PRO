@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <form id="form" action="">
+      <label for="minutes">Minutes</label>
+      <input
+        id="minutes"
+        name="minutes"
+        type="number"
+        value="0"
+        min="0"
+        max="59"
+        required
+      />
+      <label for="seconds">Seconds</label>
+      <input
+        id="seconds"
+        name="seconds"
+        type="number"
+        value="5"
+        min="1"
+        max="59"
+        required
+      />
+      <br />
+      <br />
+      <button>New timer</button>
+    </form>
+    <div id="timers"></div>
+  </body>
+</html>
