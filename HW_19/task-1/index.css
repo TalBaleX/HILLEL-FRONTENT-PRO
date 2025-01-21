@@ -1,0 +1,80 @@
+body {
+  font-family: "Geologica";
+  color: white;
+  font-size: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  background-color: #60a9ff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  form {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+    input {
+      padding: 10px;
+    }
+    input + input {
+      margin-left: 10px;
+    }
+  }
+  .weatherPage {
+    display: none;
+  }
+}
+.app.weatherPage .startPage {
+  display: none;
+}
+.app.weatherPage .weatherPage {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+#upperCityInfo {
+  height: 30%;
+}
+#lowerCityInfo {
+  background-color: rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  #innerPart {
+    height: 75%;
+    width: 60%;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  #innerPart * {
+    opacity: 1;
+  }
+}
+.app.rain {
+  background-color: #3f66cb;
+}
+.app.clear {
+  background-color: #ecd71a;
+}
+.app.cloud {
+  background-color: #bebebe;
+}
+.app.fog {
+  background-color: #3d3d3d;
+}
+.app.idk {
+  background-color: #ec1a1a;
+}
