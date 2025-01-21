@@ -5,8 +5,9 @@ const lowerPart = document.querySelector("#innerPart");
 
 async function getWeather(name) {
   try {
+    const token = "OWM_TOKEN";
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=43665f7507100b56a032429b1dccd409`
+      `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${token}`
     );
 
     if (!response.ok) {
