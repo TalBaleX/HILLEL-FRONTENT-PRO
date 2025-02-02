@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Weather App</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="dist/main.js" defer="defer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer="defer" src="main.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="app">
+      <form id="form" action="">
+        <input name="cityName" placeholder="London" required />
+        <input type="submit" value="Actual info" />
+      </form>
+      <div id="startText" class="startPage">Hi, where it goes today?</div>
+      <div id="upperCityInfo" class="weatherPage">
+        <div name="cityName"></div>
+        <div name="cityTemperature"></div>
+      </div>
+      <div id="lowerCityInfo" class="weatherPage">
+        <div id="innerPart">
+          <div name="wind" class="overWeatherTitle">
+            <div>Wind</div>
+            <div></div>
+          </div>
+          <div name="humidity" class="overWeatherTitle">
+            <div>Humidity</div>
+            <div></div>
+          </div>
+          <div name="cloud" class="overWeatherTitle">
+            <div>Clouds</div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
