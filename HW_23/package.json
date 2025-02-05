@@ -1,0 +1,13 @@
+{
+  "name": "nodejs",
+  "version": "x.x.x",
+  "main": "index.js",
+  "author": "iKot",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["frontend", "service"],
+  "scripts": {
+    "start:server": "yarn workspace service run start:dev",
+    "start:frontend": "yarn workspace frontend run start"
+  }
+}
