@@ -20,6 +20,6 @@ db.on("open", () => {
 app.listen(port, hostname, () => {
   Logger.info(`Server is serving on http://${hostname}:${port}`);
   Logger.info(
-    `Swagger documentation is serving on http://${hostname}:${port}/api`
+    `Swagger documentation is serving on http://${hostname}:${port}/api`,
   );
 });

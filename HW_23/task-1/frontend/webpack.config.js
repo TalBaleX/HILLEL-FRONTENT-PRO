@@ -36,7 +36,7 @@ export default (env, argv) => {
       },
       static: resolve(__dirname, "dist"),
       compress: true,
-      port: 3000,
+      port: 4000,
       hot: true,
     },
     module: {

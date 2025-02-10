@@ -22,11 +22,13 @@ async function handleFormSubmit(e) {
 
   const data = new TodoAPI(title, description);
 
-  await TodoAPI.save(process.env.BASE_SERVICE_URL, data).then(() => {
-    fetchTodos();
-  }).catch((e) => {
-    fetchErrorHandler(e);
-  });
+  await TodoAPI.save(process.env.BASE_SERVICE_URL, data)
+    .then(() => {
+      fetchTodos();
+    })
+    .catch((e) => {
+      fetchErrorHandler(e);
+    });
 }
 
 function fetchTodos() {
@@ -45,3 +47,4 @@ function fetchErrorHandler(e) {
   view.renderLoader("error");
   view.renderError(e.message);
 }
+export { fetchTodos };

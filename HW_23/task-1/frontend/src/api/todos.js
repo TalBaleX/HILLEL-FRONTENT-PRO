@@ -34,6 +34,45 @@ export class TodoAPI {
     }
   }
 
+  static async delete(url, id) {
+    try {
+      const resp = await fetch(`${url}/${TodoAPI.prefix}/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!resp.ok) {
+        console.error("Failed to delete todo.");
+        throw new Error("Failed to delete todo.");
+      }
+    } catch (e) {
+      console.error(e);
+      throw new Error("Error deleting todo.");
+    }
+  }
+
+  static async edit(url, id, data) {
+    try {
+      const resp = await fetch(`${url}/${TodoAPI.prefix}/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!resp.ok) {
+        console.error("Failed to edit todo.");
+        throw new Error("Failed to edit todo.");
+      }
+    } catch (e) {
+      console.error(e);
+      throw new Error("Error editing todo.");
+    }
+  }
+
   constructor(title, description = "", completed = false) {
     this.title = title;
     this.description = description;
