@@ -1,0 +1,131 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+:root {
+  --bg-light: #ffffff;
+  --text-light: #000000;
+  --primary-light: #007bff;
+  --nav-text-light: white;
+  --task-text: #000;
+}
+
+[data-theme="dark"] {
+  --bg-dark: #121212;
+  --text-dark: #ffffff;
+  --primary-dark: #1e1e1e;
+  --nav-text-dark: #ffffff;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.navbar {
+  background-color: var(--primary-light);
+  padding: 1rem;
+  color: var(--nav-text-light);
+}
+
+[data-theme="dark"] .navbar {
+  background-color: var(--primary-dark);
+  color: var(--nav-text-dark);
+}
+
+.btn-light {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+}
+
+[data-theme="dark"] .btn-light {
+  background-color: #333;
+  border: 1px solid #555;
+  color: white;
+}
+
+.containerTodos {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.form {
+  background: #fff;
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.form__input {
+  min-height: 25px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #000;
+}
+
+.form__btn {
+  background: #0be69d;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+
+.todo-item {
+  display: flex;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-item__description {
+  flex-grow: 1;
+  margin-left: 10px;
+  color: var(--task-text);
+}
+
+.todo-item--checked .todo-item__description {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.todo-item__delete {
+  background: #0be69d;
+  border: none;
+  cursor: pointer;
+  width: 95px;
+  padding: 10px;
+}
+
+footer {
+  background: #343a40;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+}

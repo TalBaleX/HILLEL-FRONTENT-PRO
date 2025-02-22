@@ -1,45 +1,20 @@
 import React from "react";
+import { useTheme } from "/src/context/ThemeContext.jsx";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+export default function Header() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          My Website
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                Main Page
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/contacts">
-                Contacts
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/about-me">
-                About Me
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <header className="navbar d-flex justify-content-between align-items-center">
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about-me">About Me</Link>
+        <Link to="/contacts">Contacts</Link>
+      </nav>
+      <button onClick={toggleTheme} className="theme-toggle-btn">
+        {theme === "light" ? "Dark Mode" : "Light Mode"}
+      </button>
+    </header>
   );
-};
-
-export default Header;
+}
