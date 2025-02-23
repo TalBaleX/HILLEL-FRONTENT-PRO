@@ -5,12 +5,12 @@ import Todos from "/src/components/Todos/Todos.jsx";
 
 export default function MainPage() {
   return (
-    <div>
+    <>
       <Header />
       <main>
         <Todos />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

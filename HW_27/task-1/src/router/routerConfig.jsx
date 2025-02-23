@@ -1,4 +1,3 @@
-// src/router/RouterConfig.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "/src/pages/MainPage/index.jsx";
 import AboutMe from "/src/pages/AboutMe/index.jsx";

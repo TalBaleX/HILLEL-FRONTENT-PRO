@@ -1,0 +1,15 @@
+.containerTodos {
+  background-color: #e0f7fa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.containerTodos h1 {
+  color: #00796b;
+}
+
+.containerTodos p {
+  color: #004d40;
+  margin-bottom: 15px;
+}

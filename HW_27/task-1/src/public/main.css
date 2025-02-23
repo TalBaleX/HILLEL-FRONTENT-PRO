@@ -15,7 +15,8 @@ body {
 }
 
 .content {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 :root {
@@ -24,6 +25,8 @@ body {
   --primary-light: #007bff;
   --nav-text-light: white;
   --task-text: #000;
+  --link-light: white;
+  --link-dark: white;
 }
 
 [data-theme="dark"] {
@@ -49,9 +52,23 @@ body {
   color: var(--nav-text-light);
 }
 
+.navbar a {
+  color: var(--link-light);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
 [data-theme="dark"] .navbar {
   background-color: var(--primary-dark);
   color: var(--nav-text-dark);
+}
+
+[data-theme="dark"] .navbar a {
+  color: var(--link-dark);
+}
+
+.navbar a:hover {
+  text-decoration: underline;
 }
 
 .btn-light {
@@ -63,12 +80,6 @@ body {
   background-color: #333;
   border: 1px solid #555;
   color: white;
-}
-
-.containerTodos {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
 }
 
 .form {
@@ -91,7 +102,11 @@ body {
   cursor: pointer;
   width: 100px;
 }
-
+ul {
+  padding: 0;
+  width: 70%;
+  margin: auto;
+}
 .todo-item {
   display: flex;
   padding: 10px;
@@ -127,5 +142,20 @@ footer {
   color: white;
   text-align: center;
   padding: 10px;
-  margin-top: auto;
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  margin-bottom: 0;
+}
+main {
+  flex-grow: 1;
+  padding: 30px;
+}
+.containerTodos {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
 }

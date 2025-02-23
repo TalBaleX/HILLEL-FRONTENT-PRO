@@ -1,25 +1,26 @@
-// src/components/ErrorBoundary/ErrorBoundary.jsx
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 
-export default class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
+const ErrorBoundary = ({ children }) => {
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    const handleError = (error, errorInfo) => {
+      console.error("Caught an error:", error, errorInfo);
+      setHasError(true);
+    };
+
+    window.addEventListener("error", handleError);
+
+    return () => {
+      window.removeEventListener("error", handleError);
+    };
+  }, []);
+
+  if (hasError) {
+    return <h1>Error! Please try to refresh the page</h1>;
   }
 
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
+  return children;
+};
 
-  componentDidCatch(error, errorInfo) {
-    console.error("Caught an error:", error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return <h1>Что-то пошло не так! Попробуйте обновить страницу.</h1>;
-    }
-
-    return this.props.children;
-  }
-}
+export default ErrorBoundary;
