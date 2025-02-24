@@ -1,0 +1,27 @@
+.task-list {
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  min-height: 80px;
+  border: 1px solid rgb(234, 234, 234);
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.task-item span {
+  margin-left: 10px;
+}
+
+.task-item .completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.task-item button {
+  margin-left: auto;
+}
