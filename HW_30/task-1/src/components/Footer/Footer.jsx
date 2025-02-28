@@ -1,11 +1,17 @@
 import React from "react";
-class Footer extends React.Component {
-  render() {
-    return (
-      <button type="button" class="btn btn-warning">
+
+const Footer = ({ setUrl }) => {
+  const clear = () => {
+    setUrl("");
+  };
+
+  return (
+    <footer>
+      <button type="button" className="btn btn-warning" onClick={clear}>
         Clear
       </button>
-    );
-  }
-}
+    </footer>
+  );
+};
+
 export default Footer;

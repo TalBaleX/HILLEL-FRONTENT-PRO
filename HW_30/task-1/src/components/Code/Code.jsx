@@ -1,61 +1,51 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchData } from "../../store/actions";
 import "./Code.css";
 
-class Code extends React.Component {
-  render() {
-    return (
-      <div id="code">
-        <span>
-          <button type="button" className="btn btn-secondary">
-            people
-          </button>
+const Code = ({ url, setUrl }) => {
+  const { loading, data, error } = useSelector((state) => state);
+  const dispatch = useDispatch();
 
-          <button type="button" className="btn btn-secondary">
-            1
-          </button>
-        </span>
-        <br />
-        <br />
-        <pre>
-          <code>
-            {JSON.stringify(
-              {
-                name: "Luke Skywalker",
-                height: "172",
-                mass: "77",
-                hair_color: "blond",
-                skin_color: "fair",
-                eye_color: "blue",
-                birth_year: "19BBY",
-                gender: "male",
-                homeworld: "https://swapi.dev/api/planets/1/",
-                films: [
-                  "https://swapi.dev/api/films/1/",
-                  "https://swapi.dev/api/films/2/",
-                  "https://swapi.dev/api/films/3/",
-                  "https://swapi.dev/api/films/6/",
-                ],
-                species: [],
-                vehicles: [
-                  "https://swapi.dev/api/vehicles/14/",
-                  "https://swapi.dev/api/vehicles/30/",
-                ],
-                starships: [
-                  "https://swapi.dev/api/starships/12/",
-                  "https://swapi.dev/api/starships/22/",
-                ],
-                created: "2014-12-09T13:50:51.644000Z",
-                edited: "2014-12-20T21:17:56.891000Z",
-                url: "https://swapi.dev/api/people/1/",
-              },
-              null,
-              2
-            )}
-          </code>
-        </pre>
-      </div>
-    );
-  }
-}
+  const search = (path) => {
+    const fullUrl = `https://swapi.dev/api/${path}`;
+    setUrl(fullUrl);
+    dispatch(fetchData(fullUrl));
+  };
+
+  const getPathParts = (url) => {
+    if (!url) return [];
+    const baseUrl = "https://swapi.dev/api/";
+    return url.replace(baseUrl, "").split("/").filter(Boolean);
+  };
+
+  return (
+    <div id="code">
+      {loading && <div className="loader">Loading...</div>}
+      {error && <div className="error">Error: {error}</div>}
+      {data && (
+        <>
+          <span>
+            {getPathParts(url).map((part, index, arr) => (
+              <button
+                key={index}
+                type="button"
+                className="btn btn-secondary"
+                onClick={() => search(arr.slice(0, index + 1).join("/"))}
+              >
+                {part}
+              </button>
+            ))}
+          </span>
+          <br />
+          <br />
+          <pre>
+            <code>{JSON.stringify(data, null, 2)}</code>
+          </pre>
+        </>
+      )}
+    </div>
+  );
+};
 
 export default Code;
