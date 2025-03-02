@@ -1,0 +1,21 @@
+#counter {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  display: flex;
+  width: 150px;
+  flex-direction: column;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 25px 10px;
+
+  .innerBoxes {
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    word-wrap: break-word;
+    width: 100%;
+    overflow-wrap: break-word;
+    display: block;
+    width: 100%;
+  }
+}
