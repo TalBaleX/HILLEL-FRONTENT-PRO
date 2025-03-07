@@ -1,0 +1,32 @@
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list .todo {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-list .todo.completed {
+  text-decoration: line-through;
+}
+
+.todo-list .todo input {
+  flex: 1;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.todo-list .todo button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
