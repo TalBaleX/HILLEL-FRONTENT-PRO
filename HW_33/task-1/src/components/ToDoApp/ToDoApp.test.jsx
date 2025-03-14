@@ -1,10 +1,13 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
+import { act } from "react";
+import "@testing-library/jest-dom";
 import ToDoApp from "./ToDoApp.jsx";
 
 test("renders the page with title TODO", () => {
-  render(<ToDoApp />);
+  act(() => {
+    render(<ToDoApp />);
+  });
   expect(document.title).toBe("TODO");
 });
 
